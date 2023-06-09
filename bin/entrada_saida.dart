@@ -1,4 +1,3 @@
-import 'package:entrada_saida/entrada_saida.dart' as entrada_saida;
 import 'dart:io';
 
 void main(List<String> arguments) {
