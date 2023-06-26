@@ -1,5 +1,8 @@
 import 'package:dart_sintaxe/dart_sintaxe.dart' as dart_sintaxe;
 
+import 'transporte.dart';
+import 'viagem.dart';
+
 void main(List<String> arguments) {
   print('Hello world: ${dart_sintaxe.calculate()}!');
 
@@ -11,36 +14,21 @@ void main(List<String> arguments) {
 
   print(multiplica(3, 40));
 
-  void escolherMeioTransporte(Transporte locomocao) {
+  /* void escolherMeioTransporte(Transporte locomocao) {
     if (locomocao == Transporte.carro) {
       print("Vou de CARRO para aventura!");
     } else if (locomocao == Transporte.bike) {
       print("Vou de BIKE para aventura!");
     }
-  }
+  } */
 
-  escolherMeioTransporte(Transporte.carro);
+  /*  escolherMeioTransporte(Transporte.carro);
 
-  void escolherMeioTransporte2(Transporte? locomocao) {
-    switch (locomocao) {
-      case Transporte.carro:
-        print("[2] Vou de CARRO para aventura!");
-        break;
-      case Transporte.bike:
-        print("[2] Vou de BIKE para aventura!");
-        break;
-      case Transporte.onibus:
-        print("[2] Vou de BUSÃO para aventura!");
-        break;
-      default:
-        print("Estou indo para aventura, isso é o que importa!");
-        break;
-    }
-  }
+
 
   escolherMeioTransporte2(Transporte.bike);
   escolherMeioTransporte2(Transporte.onibus);
-  escolherMeioTransporte2(null);
+  escolherMeioTransporte2(null); */
 
   //exercício:
 
@@ -67,7 +55,7 @@ void main(List<String> arguments) {
   TiposConta.tiposContasAtivos();
 
   //não é bom para evitar repetições
-  List<String> destinos = [];
+  /*  List<String> destinos = [];
   String destino = "Rio de Janeiro";
   destinos.add(destino);
   destinos.add(destino);
@@ -80,9 +68,9 @@ void main(List<String> arguments) {
   Set<String> registrarDestinos(String destino, Set<String> banco) {
     banco.add(destino);
     return banco;
-  }
+  } */
 
-  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
+/*   registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
   registrosVisitados = registrarDestinos("Paraná", registrosVisitados);
   registrosVisitados = registrarDestinos("Rio de Janeiro", registrosVisitados);
 
@@ -93,7 +81,7 @@ void main(List<String> arguments) {
   print(registrosVisitados.elementAt(1)); //Paraná
   print(registrosVisitados.contains('Rio de Janeiro')); //true
   print(registrosVisitados.contains("Natal")); //false
-
+ */
   List<int> numbers = [];
 
   List<int> numbers1 = [1, 2, 3, 4];
@@ -129,12 +117,24 @@ void main(List<String> arguments) {
   print(registrarPrecos);
 
   //exercício
-  Pessoa pessoaDandara =
+  /* Pessoa pessoaDandara =
       Pessoa(nome: 'Dandara', idade: 25, estaAutenticada: true);
-  Map<String, dynamic> mapDandara = pessoaDandara.toMap();
-}
+  Map<String, dynamic> mapDandara = pessoaDandara.toMap(); */
 
-enum Transporte { carro, bike, onibus }
+  Viagem viagemMaio = Viagem(locomocao: Transporte.aviao);
+
+  print(viagemMaio.consultarTotalLocaisVisitados);
+  viagemMaio.visitar("Museu");
+  print(viagemMaio.consultarTotalLocaisVisitados);
+
+  viagemMaio.alterarLocaisVisitados = 4;
+
+  print(viagemMaio.consultarTotalLocaisVisitados);
+
+  viagemMaio.alterarLocaisVisitados = 100;
+
+  print(viagemMaio.consultarTotalLocaisVisitados);
+}
 
 //exercício
 enum TiposConta {
